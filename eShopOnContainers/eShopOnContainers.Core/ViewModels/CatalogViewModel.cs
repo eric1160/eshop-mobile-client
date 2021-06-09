@@ -78,6 +78,8 @@ namespace eShopOnContainers.Core.ViewModels
 
         public ICommand AddCatalogItemCommand => new Command<CatalogItem>(AddCatalogItem);
 
+        public ICommand SeeCatalogItemDescriptionCommand => new Command<CatalogItem>(async (CatalogItem item) => await SeeCatalogItemDescription(item));
+
         public ICommand FilterCommand => new Command(async () => await FilterAsync());
 
 		public ICommand ClearFilterCommand => new Command(async () => await ClearFilterAsync());
@@ -125,6 +127,12 @@ namespace eShopOnContainers.Core.ViewModels
             Products = await _productsService.GetCatalogAsync();
 
             IsBusy = false;
+        }
+
+        private async Task SeeCatalogItemDescription(CatalogItem catalogItem)
+        {
+            // Go To Description Page
+            await NavigationService.NavigateToAsync<CatalogDescriptionViewModel>(catalogItem);
         }
     }
 }

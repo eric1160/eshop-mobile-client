@@ -92,7 +92,7 @@
                 <ListView.Behaviors>
                     <behaviors:EventToCommandBehavior                    
                         EventName="ItemTapped"
-                        Command="{Binding AddCatalogItemCommand}"
+                        Command="{Binding SeeCatalogItemDescriptionCommand}"
                         EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />
                 </ListView.Behaviors>
                 <ListView.ItemTemplate>

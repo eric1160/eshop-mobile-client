@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:viewModelBase="clr-namespace:eShopOnContainers.Core.ViewModels.Base;assembly=eShopOnContainers.Core"
+    viewModelBase:ViewModelLocator.AutoWireViewModel="true"
+    x:Name="CatalogDescriptionPage"
+    x:Class="eShopOnContainers.Core.Views.CatalogDescriptionView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NormalLabelStyle" 
+               TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargeSize}" />
+            </Style>
+            
+            <Style x:Key="BoldLabelStyle" 
+               TargetType="{x:Type Label}">
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource BigSize}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlackColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="250, *" BindingContext="{Binding Product}" RowSpacing="20">
+
+        <ffimageloading:CachedImage Grid.Row="0" Source="{Binding PictureUri}"></ffimageloading:CachedImage>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+            <Label
+                Text="Product:"
+                Style="{StaticResource NormalLabelStyle}"/>
+            <Label
+                Text="{Binding Name, StringFormat='{0:N}'}"
+                Style="{StaticResource BoldLabelStyle}"/>
+
+            <Label
+                Text="Price: "
+                Style="{StaticResource NormalLabelStyle}"/>
+            <Label
+                Text="{Binding Price, StringFormat='${0:N}'}"
+                Style="{StaticResource BoldLabelStyle}"/>
+
+            <Label
+                Text="Brand: "
+                Style="{StaticResource NormalLabelStyle}"/>
+            <Label
+                Text="{Binding CatalogBrand, StringFormat='{0:N}'}"
+                Style="{StaticResource BoldLabelStyle}"/>
+
+            <Label
+                Text="Type: "
+                Style="{StaticResource NormalLabelStyle}"/>
+            <Label
+                Text="{Binding CatalogType, StringFormat='{0:N}'}"
+                Style="{StaticResource BoldLabelStyle}"/>
+
+            <Label
+                Text="Description: "
+                Style="{StaticResource NormalLabelStyle}"/>
+            <Label
+                Text="{Binding Description, StringFormat='{0:N}'}"
+                Style="{StaticResource NormalLabelStyle}"/>
+
+            <Button Text="Add to Cart" HorizontalOptions="CenterAndExpand" Command="{Binding Source={x:Reference CatalogDescriptionPage}, Path=BindingContext.AddCatalogItemCommand}" />
+
+        </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -92,7 +92,7 @@
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Style="{StaticResource AddButtonStyle}">
-                <controls:AddBasketButton />
+                <controls:InfoButton />
             </Grid>
             <!-- NAME -->
             <Label 

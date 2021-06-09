@@ -89,6 +89,8 @@
     <Compile Include="Services\LocationServiceImplementation.cs" />
     <Compile Include="Services\PermissionsService.cs" />
     <Compile Include="Services\GeolocationSingleUpdateDelegate.cs" />
+    <BundleResource Include="Resources\Icon-Info.png" />
+    <BundleResource Include="Resources\icInfo.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-60%403x.png" />

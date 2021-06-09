@@ -110,6 +110,18 @@
     <AndroidResource Include="Resources\drawable-hdpi\menu_filter.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\menu_filter.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\menu_filter.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icInfo.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\icInfo.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\icInfo.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
